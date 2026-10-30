@@ -1,0 +1,75 @@
+<div class="sse-shell">
+  <header class="sse-head">
+    <input type="search" name="search" value="{{search}}" placeholder="{{text.search}}" aria-label="{{text.search}}"
+      autocomplete="off">
+    <button type="button" class="sse-primary" data-action="saveSelected" data-tooltip="{{text.saveHint}}">
+      <i class="fa-solid fa-floppy-disk" inert></i> {{text.saveSelected}}</button>
+  </header>
+  <div class="sse-options">
+    <label><input type="checkbox" data-setting="placeHidden" {{#if placeHidden}}checked{{/if}}> {{text.placeHidden}}</label>
+    <label><input type="checkbox" data-setting="combatAddPlayers" {{#if combatAddPlayers}}checked{{/if}}>
+      {{text.combatAddPlayers}}</label>
+  </div>
+  {{#if empty}}
+  <p class="sse-empty"><i class="fa-solid fa-dragon" inert></i> {{text.empty}}</p>
+  {{else}}
+  <div class="sse-list">
+    {{#each folders}}
+    <details class="sse-folder" data-folder="{{id}}" {{#unless closed}}open{{/unless}} style="--sse-depth: {{depth}}">
+      <summary><i class="fa-solid fa-folder" inert></i> <span>{{name}}</span> <span class="sse-count">{{count}}</span></summary>
+      {{#each encounters}}
+      <article class="sse-row" data-uuid="{{uuid}}" data-search="{{needle}}">
+        <div class="sse-portraits">
+          {{#each portraits}}<img src="{{src}}" alt="{{name}}" title="{{name}}" loading="lazy" draggable="false">{{/each}}
+          {{#if more}}<span class="sse-more">+{{more}}</span>{{/if}}
+        </div>
+        <div class="sse-main">
+          <div class="sse-name">{{name}}</div>
+          <div class="sse-summary">{{summary}}</div>
+          {{#if meta.length}}
+          <div class="sse-meta">
+            {{#each meta}}<span{{#if facing}} class="sse-facing"{{/if}}><i class="{{icon}}" inert></i> {{text}}</span>{{/each}}
+          </div>
+          {{/if}}
+          <div class="sse-actions">
+            <button type="button" class="sse-primary" data-action="place"><i class="fa-solid fa-hand-pointer" inert></i>
+              {{../../text.place}}</button>
+            <button type="button" data-action="fight"><i class="fa-solid fa-swords" inert></i> {{../../text.fight}}</button>
+            {{#if pinHere}}
+            <button type="button" class="sse-icon" data-action="atPin" data-tooltip="{{../../text.atPin}}"
+              aria-label="{{../../text.atPin}}"><i class="fa-solid fa-map-location-dot" inert></i></button>
+            {{/if}}
+            <button type="button" class="sse-icon" data-action="pin" data-tooltip="{{../../text.pin}}"
+              aria-label="{{../../text.pin}}"><i class="fa-solid fa-location-dot" inert></i></button>
+            <span class="sse-turn">
+              <button type="button" class="sse-icon" data-action="turnLeft" data-tooltip="{{../../text.turnLeft}}"
+                aria-label="{{../../text.turnLeft}}"><i class="fa-solid fa-reply" inert></i></button>
+              <button type="button" class="sse-icon" data-action="turnRight" data-tooltip="{{../../text.turnRight}}"
+                aria-label="{{../../text.turnRight}}"><i class="fa-solid fa-share" inert></i></button>
+            </span>
+            {{#if placed}}
+            <button type="button" class="sse-icon" data-action="again" data-tooltip="{{../../text.again}}"
+              aria-label="{{../../text.again}}"><i class="fa-solid fa-rotate-left" inert></i></button>
+            <button type="button" class="sse-icon" data-action="remove" data-tooltip="{{../../text.remove}}"
+              aria-label="{{../../text.remove}}"><i class="fa-solid fa-broom" inert></i></button>
+            {{/if}}
+            {{#if loot}}
+            <button type="button" class="sse-icon" data-action="loot" data-tooltip="{{../../text.loot}}"
+              aria-label="{{../../text.loot}}"><i class="fa-solid fa-coins" inert></i></button>
+            {{/if}}
+            <span class="sse-spacer"></span>
+            <button type="button" class="sse-icon" data-action="edit" data-tooltip="{{../../text.edit}}"
+              aria-label="{{../../text.edit}}"><i class="fa-solid fa-pen" inert></i></button>
+            <button type="button" class="sse-icon" data-action="open" data-tooltip="{{../../text.open}}"
+              aria-label="{{../../text.open}}"><i class="fa-solid fa-book-open" inert></i></button>
+            <button type="button" class="sse-icon" data-action="delete" data-tooltip="{{../../text.delete}}"
+              aria-label="{{../../text.delete}}"><i class="fa-solid fa-trash" inert></i></button>
+          </div>
+        </div>
+      </article>
+      {{/each}}
+    </details>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

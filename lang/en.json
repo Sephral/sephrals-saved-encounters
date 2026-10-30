@@ -1,0 +1,180 @@
+{
+  "SSE": {
+    "LANGUAGE": {
+      "default": "Like Foundry",
+      "de": "Deutsch",
+      "en": "English"
+    },
+    "SETTINGS": {
+      "uiLanguage": {
+        "name": "Module language",
+        "hint": "Language of Saved Encounters on this device. \"Like Foundry\" follows Foundry's language."
+      },
+      "theme": {
+        "name": "Look",
+        "hint": "Signature shows the encounter windows on warm paper, Foundry keeps them dark like the rest of Foundry.",
+        "signature": "Signature (paper)",
+        "foundry": "Foundry (dark)"
+      },
+      "placeHidden": {
+        "name": "Place hidden",
+        "hint": "Placed monsters start hidden from the players, so you can reveal them when the moment comes."
+      },
+      "combatAddPlayers": {
+        "name": "The heroes join the fight",
+        "hint": "Place and fight also adds the visible tokens of the player characters on the scene to the combat."
+      },
+      "pinShowsName": {
+        "name": "Name on the map pin",
+        "hint": "A map pin shows the name of its encounter below the icon. Players never see encounter pins."
+      }
+    },
+    "gear": "Settings",
+    "Tool": {
+      "open": "Saved encounters",
+      "save": "Save selected tokens as an encounter"
+    },
+    "Keys": {
+      "saveSelected": "Save the selected tokens as an encounter",
+      "openWindow": "Open the saved encounters",
+      "turnLeft": "Turn the group left while placing",
+      "turnRight": "Turn the group right while placing",
+      "turnHint": "While the monsters follow the mouse, turns the whole group by 90° around its middle. Ctrl or Shift and the mouse wheel turn it too."
+    },
+    "Folder": {
+      "root": "Encounters",
+      "actors": "Encounter monsters"
+    },
+    "Window": {
+      "title": "Saved Encounters",
+      "open": "Open encounters",
+      "menuHint": "All saved encounters of this world, ready to place on the map.",
+      "search": "Search encounters",
+      "saveSelected": "Save selected tokens",
+      "saveHint": "Select monsters on the map, then save them as an encounter with their positions.",
+      "empty": "No encounters yet. Select the monsters on the map and click Save selected tokens.",
+      "noFolder": "Other encounters",
+      "place": "Place",
+      "fight": "Place and fight",
+      "pin": "Put a pin on the map",
+      "atPin": "Place at the pin on this scene",
+      "again": "Place again: remove the placed monsters and set them up fresh",
+      "remove": "Remove the placed monsters",
+      "loot": "Roll the loot",
+      "turnLeft": "Turn the group 90° left, for the next placement and the pin",
+      "turnRight": "Turn the group 90° right, for the next placement and the pin",
+      "edit": "Edit",
+      "openJournal": "Open the journal entry",
+      "delete": "Delete",
+      "deleteTitle": "Delete encounter",
+      "deleteText": "Delete the encounter \"{name}\" and its map pins? Monsters already on a scene stay there.",
+      "groupLine": "{count} {name}",
+      "placedOn": "{count} on {scene}",
+      "pinnedOn": "Pin on {scenes}",
+      "hasLoot": "Loot table"
+    },
+    "Editor": {
+      "newTitle": "Save encounter",
+      "editTitle": "Encounter: {name}",
+      "defaultName": "New encounter",
+      "namePlaceholder": "{name} encounter",
+      "name": "Name",
+      "folder": "Folder",
+      "newFolderOption": "New folder…",
+      "newFolder": "Name of the new folder",
+      "folderName": "Give the new folder a name.",
+      "monsters": "Monsters",
+      "tokenOne": "1 token",
+      "tokens": "{count} tokens",
+      "formula": "How many",
+      "formulaHint": "Empty places them as saved. A number or a dice formula like 1d4+1 is rolled each time you place the encounter.",
+      "unique": "A unique character, placed once and left out when it already stands on the scene",
+      "remove": "Remove",
+      "drop": "Drop actors here from the sidebar or a compendium to add them.",
+      "empty": "No monsters yet.",
+      "actorsOnly": "Drop actors here.",
+      "loot": "Loot",
+      "lootDrop": "Drop a roll table here for the loot of this encounter.",
+      "lootOnly": "Drop a roll table here.",
+      "clearLoot": "Remove the loot table",
+      "notes": "Notes",
+      "notesHint": "Tactics, treasure, what happens when the fight turns",
+      "keepChanges": "Keep the changes on these tokens",
+      "keepChangesHint": "Some tokens were changed during play, for example lost hit points. Without the tick every placement starts fresh.",
+      "noTokens": "An encounter needs at least one monster.",
+      "badFormula": "\"{formula}\" for {name} is no number or dice formula.",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "Page": {
+      "name": "Encounter",
+      "monsters": "Monsters",
+      "count": "How many",
+      "notes": "Notes",
+      "unique": "unique",
+      "rolled": "rolled: {formula}",
+      "loot": "Loot"
+    },
+    "Preview": {
+      "place": "Click to place {name} ({count} tokens)",
+      "placeFight": "Click to place {name} and start the fight ({count} tokens)",
+      "pin": "Click to pin {name} to the map",
+      "keys": "Shift: no grid snap · right click or Esc: cancel"
+    },
+    "Turn": {
+      "keys": "{keys} or Ctrl and mouse wheel: turn the group",
+      "wheel": "Ctrl and mouse wheel: turn the group",
+      "right": "Turned 90° right",
+      "half": "Turned 180°",
+      "left": "Turned 90° left"
+    },
+    "Notice": {
+      "saved": "Encounter \"{name}\" saved with {count} tokens.",
+      "selectTokens": "Select the tokens of the encounter on the map first.",
+      "empty": "This encounter has no monsters.",
+      "noScene": "Open a scene first.",
+      "missingActors": "These actors were not found and stay out: {names}",
+      "linkedSkipped": "These unique characters already stand on this scene and were not placed again: {names}",
+      "linkedSkippedFight": "These unique characters already stand on this scene. They were not placed again and stay out of the fight: {names}",
+      "noneRolled": "The counts of \"{name}\" came out as zero, nothing to place.",
+      "imported": "{count} actors were imported from compendiums into the folder Encounter monsters.",
+      "placed": "\"{name}\" placed: {count} tokens.",
+      "removed": "{count} tokens of \"{name}\" removed.",
+      "noPlacement": "\"{name}\" has no placement to repeat.",
+      "pinCompendium": "Import the encounter from the compendium first, then pin it to the map.",
+      "pinned": "Pin for \"{name}\" set. Double click it to open the encounter, Alt and double click places it.",
+      "pinnedHidden": "Pin for \"{name}\" set. It shows when the journal notes are visible on the map.",
+      "noPin": "\"{name}\" has no pin on this scene.",
+      "noLoot": "This encounter has no loot table.",
+      "lootMissing": "The loot table of this encounter was not found.",
+      "initiativeFailed": "The monsters are in the fight, but their initiative could not be rolled: {error}"
+    },
+    "SELFTEST": {
+      "Title": "Saved Encounters self test",
+      "Run": "Run self test",
+      "Hint": "Checks grid snapping, token creation, fights, compendium import, the storage and a test placement. The result appears as a whisper in the chat.",
+      "Snap": "Foundry's grid snapping for tokens was not found.",
+      "Coordinates": "Foundry's conversion between screen and map was not found.",
+      "Combat": "Foundry's initiative roll was not found.",
+      "Import": "Foundry's import from compendiums was not found.",
+      "Dialog": "Foundry's dialogs were not found.",
+      "Drop": "Foundry's drag and drop data was not found.",
+      "Storage": "The storage \"{key}\" is missing.",
+      "Broken": "These encounters could not be read: {names}",
+      "Texts": "Texts missing: {keys}",
+      "Plan": "The test encounter could not be planned.",
+      "Positions": "The test encounter could not be placed on the grid of this scene.",
+      "Problems": "Saved Encounters: {problems} of {checks} checks failed.",
+      "Passed": "Saved Encounters: all {checks} checks passed.",
+      "Version": "Foundry {current}, verified with {tested}.",
+      "NewVersions": "Saved Encounters was verified with an older Foundry version ({versions}). Run the self test in the module settings to check it."
+    },
+    "DEBUG": {
+      "Title": "Debug file",
+      "Save": "Save debug file",
+      "Hint": "Saves one file for bug reports about all of Sephral’s modules in this world: versions, settings and what the modules recorded, such as the latest chat messages they read. It contains chat text and whispers, check it before you share it.",
+      "Entry": "Save Debug File (Sephral’s Modules)",
+      "Saved": "Debug file {file} saved. It contains chat text and whispers, check it before you share it."
+    }
+  }
+}

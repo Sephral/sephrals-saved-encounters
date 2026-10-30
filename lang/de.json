@@ -1,0 +1,180 @@
+{
+  "SSE": {
+    "LANGUAGE": {
+      "default": "Wie Foundry",
+      "de": "Deutsch",
+      "en": "English"
+    },
+    "SETTINGS": {
+      "uiLanguage": {
+        "name": "Modulsprache",
+        "hint": "Sprache von Saved Encounters auf diesem Gerät. \"Wie Foundry\" folgt der Sprache von Foundry."
+      },
+      "theme": {
+        "name": "Aussehen",
+        "hint": "Signature zeigt die Fenster der Begegnungen auf warmem Papier, Foundry hält sie dunkel wie den Rest von Foundry.",
+        "signature": "Signature (Papier)",
+        "foundry": "Foundry (dunkel)"
+      },
+      "placeHidden": {
+        "name": "Versteckt platzieren",
+        "hint": "Platzierte Monster sind zuerst vor den Spielern versteckt, damit du sie im richtigen Moment aufdecken kannst."
+      },
+      "combatAddPlayers": {
+        "name": "Die Helden kämpfen mit",
+        "hint": "Platzieren und kämpfen nimmt auch die sichtbaren Tokens der Spielercharaktere auf der Szene in den Kampf auf."
+      },
+      "pinShowsName": {
+        "name": "Name am Positionsmarker",
+        "hint": "Ein Positionsmarker zeigt den Namen seiner Begegnung unter dem Symbol. Spieler sehen Positionsmarker von Begegnungen nie."
+      }
+    },
+    "gear": "Einstellungen",
+    "Tool": {
+      "open": "Gespeicherte Begegnungen",
+      "save": "Ausgewählte Tokens als Begegnung speichern"
+    },
+    "Keys": {
+      "saveSelected": "Ausgewählte Tokens als Begegnung speichern",
+      "openWindow": "Gespeicherte Begegnungen öffnen",
+      "turnLeft": "Gruppe beim Platzieren nach links drehen",
+      "turnRight": "Gruppe beim Platzieren nach rechts drehen",
+      "turnHint": "Solange die Monster der Maus folgen, dreht die Taste die ganze Gruppe um 90° um ihre Mitte. Strg oder Umschalt mit dem Mausrad drehen sie auch."
+    },
+    "Folder": {
+      "root": "Begegnungen",
+      "actors": "Monster der Begegnungen"
+    },
+    "Window": {
+      "title": "Gespeicherte Begegnungen",
+      "open": "Begegnungen öffnen",
+      "menuHint": "Alle gespeicherten Begegnungen dieser Welt, bereit für die Karte.",
+      "search": "Begegnungen durchsuchen",
+      "saveSelected": "Auswahl speichern",
+      "saveHint": "Wähle Monster auf der Karte aus und speichere sie mit ihren Positionen als Begegnung.",
+      "empty": "Noch keine Begegnungen. Wähle die Monster auf der Karte aus und klicke auf Auswahl speichern.",
+      "noFolder": "Weitere Begegnungen",
+      "place": "Platzieren",
+      "fight": "Platzieren und kämpfen",
+      "pin": "Positionsmarker auf die Karte setzen",
+      "atPin": "Am Positionsmarker dieser Szene platzieren",
+      "again": "Neu aufstellen: platzierte Monster entfernen und frisch aufstellen",
+      "remove": "Platzierte Monster entfernen",
+      "loot": "Beute würfeln",
+      "turnLeft": "Gruppe um 90° nach links drehen, für das nächste Platzieren und den Positionsmarker",
+      "turnRight": "Gruppe um 90° nach rechts drehen, für das nächste Platzieren und den Positionsmarker",
+      "edit": "Bearbeiten",
+      "openJournal": "Journaleintrag öffnen",
+      "delete": "Löschen",
+      "deleteTitle": "Begegnung löschen",
+      "deleteText": "Die Begegnung \"{name}\" und ihre Positionsmarker löschen? Monster, die schon auf einer Szene stehen, bleiben dort.",
+      "groupLine": "{count} {name}",
+      "placedOn": "{count} auf {scene}",
+      "pinnedOn": "Positionsmarker auf {scenes}",
+      "hasLoot": "Beutetabelle"
+    },
+    "Editor": {
+      "newTitle": "Begegnung speichern",
+      "editTitle": "Begegnung: {name}",
+      "defaultName": "Neue Begegnung",
+      "namePlaceholder": "Begegnung mit {name}",
+      "name": "Name",
+      "folder": "Ordner",
+      "newFolderOption": "Neuer Ordner…",
+      "newFolder": "Name des neuen Ordners",
+      "folderName": "Gib dem neuen Ordner einen Namen.",
+      "monsters": "Monster",
+      "tokenOne": "1 Token",
+      "tokens": "{count} Tokens",
+      "formula": "Wie viele",
+      "formulaHint": "Leer platziert sie wie gespeichert. Eine Zahl oder Würfelformel wie 1d4+1 wird bei jedem Platzieren gewürfelt.",
+      "unique": "Ein einzigartiger Charakter, wird einmal platziert und ausgelassen, wenn er schon auf der Szene steht",
+      "remove": "Entfernen",
+      "drop": "Ziehe Akteure aus der Seitenleiste oder einem Kompendium hierher, um sie hinzuzufügen.",
+      "empty": "Noch keine Monster.",
+      "actorsOnly": "Lege hier Akteure ab.",
+      "loot": "Beute",
+      "lootDrop": "Ziehe eine Würfeltabelle hierher für die Beute dieser Begegnung.",
+      "lootOnly": "Lege hier eine Würfeltabelle ab.",
+      "clearLoot": "Beutetabelle entfernen",
+      "notes": "Notizen",
+      "notesHint": "Taktik, Schätze, was passiert, wenn der Kampf kippt",
+      "keepChanges": "Änderungen an diesen Tokens behalten",
+      "keepChangesHint": "Einige Tokens wurden im Spiel verändert, zum Beispiel durch verlorene Trefferpunkte. Ohne Haken beginnt jedes Platzieren frisch.",
+      "noTokens": "Eine Begegnung braucht mindestens ein Monster.",
+      "badFormula": "\"{formula}\" für {name} ist keine Zahl und keine Würfelformel.",
+      "save": "Speichern",
+      "cancel": "Abbrechen"
+    },
+    "Page": {
+      "name": "Begegnung",
+      "monsters": "Monster",
+      "count": "Wie viele",
+      "notes": "Notizen",
+      "unique": "einzigartig",
+      "rolled": "gewürfelt: {formula}",
+      "loot": "Beute"
+    },
+    "Preview": {
+      "place": "Klicke, um {name} zu platzieren ({count} Tokens)",
+      "placeFight": "Klicke, um {name} zu platzieren und den Kampf zu beginnen ({count} Tokens)",
+      "pin": "Klicke, um den Positionsmarker für {name} zu setzen",
+      "keys": "Umschalt: ohne Raster · Rechtsklick oder Esc: abbrechen"
+    },
+    "Turn": {
+      "keys": "{keys} oder Strg und Mausrad: Gruppe drehen",
+      "wheel": "Strg und Mausrad: Gruppe drehen",
+      "right": "Um 90° nach rechts gedreht",
+      "half": "Um 180° gedreht",
+      "left": "Um 90° nach links gedreht"
+    },
+    "Notice": {
+      "saved": "Begegnung \"{name}\" mit {count} Tokens gespeichert.",
+      "selectTokens": "Wähle zuerst die Tokens der Begegnung auf der Karte aus.",
+      "empty": "Diese Begegnung hat keine Monster.",
+      "noScene": "Öffne zuerst eine Szene.",
+      "missingActors": "Diese Akteure wurden nicht gefunden und bleiben draußen: {names}",
+      "linkedSkipped": "Diese einzigartigen Charaktere stehen schon auf dieser Szene und wurden nicht noch einmal platziert: {names}",
+      "linkedSkippedFight": "Diese einzigartigen Charaktere stehen schon auf dieser Szene. Sie wurden nicht noch einmal platziert und bleiben aus dem Kampf heraus: {names}",
+      "noneRolled": "Die Anzahlen von \"{name}\" ergaben null, es gibt nichts zu platzieren.",
+      "imported": "{count} Akteure wurden aus Kompendien in den Ordner Monster der Begegnungen importiert.",
+      "placed": "\"{name}\" platziert: {count} Tokens.",
+      "removed": "{count} Tokens von \"{name}\" entfernt.",
+      "noPlacement": "\"{name}\" hat keine Platzierung, die sich wiederholen lässt.",
+      "pinCompendium": "Importiere die Begegnung zuerst aus dem Kompendium, dann kannst du sie an die Karte heften.",
+      "pinned": "Positionsmarker für \"{name}\" gesetzt. Ein Doppelklick öffnet die Begegnung, Alt und Doppelklick platziert sie.",
+      "pinnedHidden": "Positionsmarker für \"{name}\" gesetzt. Er erscheint, wenn die Journalnotizen auf der Karte sichtbar sind.",
+      "noPin": "\"{name}\" hat auf dieser Szene keinen Positionsmarker.",
+      "noLoot": "Diese Begegnung hat keine Beutetabelle.",
+      "lootMissing": "Die Beutetabelle dieser Begegnung wurde nicht gefunden.",
+      "initiativeFailed": "Die Monster sind im Kampf, aber ihre Initiative ließ sich nicht würfeln: {error}"
+    },
+    "SELFTEST": {
+      "Title": "Selbsttest von Saved Encounters",
+      "Run": "Selbsttest starten",
+      "Hint": "Prüft das Einrasten im Raster, das Anlegen von Tokens, Kämpfe, den Import aus Kompendien, die Speicherorte und eine Testplatzierung. Das Ergebnis kommt als Flüstern in den Chat.",
+      "Snap": "Foundrys Einrasten von Tokens im Raster wurde nicht gefunden.",
+      "Coordinates": "Foundrys Umrechnung zwischen Bildschirm und Karte wurde nicht gefunden.",
+      "Combat": "Foundrys Initiativewurf wurde nicht gefunden.",
+      "Import": "Foundrys Import aus Kompendien wurde nicht gefunden.",
+      "Dialog": "Foundrys Dialoge wurden nicht gefunden.",
+      "Drop": "Foundrys Daten für Ziehen und Ablegen wurden nicht gefunden.",
+      "Storage": "Der Speicherort \"{key}\" fehlt.",
+      "Broken": "Diese Begegnungen ließen sich nicht lesen: {names}",
+      "Texts": "Texte fehlen: {keys}",
+      "Plan": "Die Testbegegnung ließ sich nicht planen.",
+      "Positions": "Die Testbegegnung ließ sich nicht im Raster dieser Szene platzieren.",
+      "Problems": "Saved Encounters: {problems} von {checks} Prüfungen fehlgeschlagen.",
+      "Passed": "Saved Encounters: alle {checks} Prüfungen bestanden.",
+      "Version": "Foundry {current}, geprüft mit {tested}.",
+      "NewVersions": "Saved Encounters wurde mit einer älteren Foundry-Version geprüft ({versions}). Der Selbsttest in den Moduleinstellungen prüft es."
+    },
+    "DEBUG": {
+      "Title": "Debug-Datei",
+      "Save": "Debug-Datei speichern",
+      "Hint": "Speichert eine Datei für Fehlerberichte über alle Module von Sephral in dieser Welt: Versionen, Einstellungen und was die Module aufgezeichnet haben, etwa die letzten Chatnachrichten, die sie gelesen haben. Sie enthält Chattext und Flüsternachrichten, prüfe sie vor dem Teilen.",
+      "Entry": "Debug-Datei speichern (Sephral’s Module)",
+      "Saved": "Debug-Datei {file} gespeichert. Sie enthält Chattext und Flüsternachrichten, prüfe sie vor dem Teilen."
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div class="sse-shell sse-editor-shell">
+  <div class="sse-fields">
+    <label class="sse-field">
+      <span>{{text.name}}</span>
+      <input type="text" name="name" value="{{name}}" placeholder="{{placeholder}}" maxlength="200" autocomplete="off">
+    </label>
+    <label class="sse-field">
+      <span>{{text.folder}}</span>
+      <select name="folderId">
+        {{#each folders}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+    </label>
+    {{#if showNewFolder}}
+    <label class="sse-field">
+      <span>{{text.newFolder}}</span>
+      <input type="text" name="newFolder" value="{{newFolder}}" maxlength="100" autocomplete="off">
+    </label>
+    {{/if}}
+  </div>
+
+  <section class="sse-section" data-drop="actors">
+    <h3>{{text.monsters}}</h3>
+    {{#if empty}}
+    <p class="sse-hint">{{text.empty}}</p>
+    {{else}}
+    <ul class="sse-groups">
+      {{#each groups}}
+      <li class="sse-group" data-group="{{key}}">
+        <img src="{{img}}" alt="" draggable="false">
+        <div class="sse-group-main">
+          <span class="sse-group-name">{{name}}</span>
+          <span class="sse-group-count">{{countLabel}}</span>
+        </div>
+        {{#if linked}}
+        <span class="sse-unique" data-tooltip="{{../text.unique}}"><i class="fa-solid fa-link" inert></i></span>
+        {{else}}
+        <input type="text" name="formula.{{key}}" data-formula="{{key}}" value="{{formula}}" placeholder="{{count}}"
+          aria-label="{{../text.formula}}" data-tooltip="{{../text.formulaHint}}" autocomplete="off">
+        {{/if}}
+        <button type="button" class="sse-icon" data-action="removeGroup" data-tooltip="{{../text.remove}}"
+          aria-label="{{../text.remove}}"><i class="fa-solid fa-xmark" inert></i></button>
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
+    <p class="sse-drop"><i class="fa-solid fa-hand-holding-hand" inert></i> {{text.drop}}</p>
+  </section>
+
+  <section class="sse-section" data-drop="loot">
+    <h3>{{text.loot}}</h3>
+    {{#if loot}}
+    <div class="sse-loot">
+      <img src="{{loot.img}}" alt="" draggable="false">
+      <span>{{loot.name}}</span>
+      <button type="button" class="sse-icon" data-action="clearLoot" data-tooltip="{{text.clearLoot}}"
+        aria-label="{{text.clearLoot}}"><i class="fa-solid fa-xmark" inert></i></button>
+    </div>
+    {{else}}
+    <p class="sse-drop"><i class="fa-solid fa-coins" inert></i> {{text.lootDrop}}</p>
+    {{/if}}
+  </section>
+
+  <label class="sse-field sse-notes">
+    <span>{{text.notes}}</span>
+    <textarea name="notes" rows="4" placeholder="{{text.notesHint}}">{{notes}}</textarea>
+  </label>
+
+  {{#if hasChanges}}
+  <label class="sse-check" data-tooltip="{{text.keepChangesHint}}">
+    <input type="checkbox" name="keepChanges" {{#if keepChanges}}checked{{/if}}> {{text.keepChanges}}
+  </label>
+  {{/if}}
+
+  <footer class="sse-footer">
+    <button type="submit" class="sse-primary"><i class="fa-solid fa-floppy-disk" inert></i> {{text.save}}</button>
+    <button type="button" data-action="cancel">{{text.cancel}}</button>
+  </footer>
+</div>
