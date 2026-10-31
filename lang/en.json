@@ -97,6 +97,8 @@
       "lootDrop": "Drop a roll table here for the loot of this encounter.",
       "lootOnly": "Drop a roll table here.",
       "clearLoot": "Remove the loot table",
+      "ledgerHint": "Without Loot Ledger the table is drawn into the chat. With it, your players claim the loot with need, want or pass.",
+      "ledgerLink": "About Loot Ledger",
       "notes": "Notes",
       "notesHint": "Tactics, treasure, what happens when the fight turns",
       "keepChanges": "Keep the changes on these tokens",

@@ -408,6 +408,11 @@
   font-size: 12px;
 }
 
+.sse-ledger-hint a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .sse-loot {
   display: flex;
   align-items: center;

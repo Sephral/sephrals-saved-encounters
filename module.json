@@ -9,10 +9,21 @@
   },
   "authors": [
     {
-      "name": "Sephral"
+      "name": "Sephral",
+      "url": "https://github.com/Sephral"
     }
   ],
   "url": "https://github.com/Sephral/sephrals-saved-encounters.git",
+  "relationships": {
+    "recommends": [
+      {
+        "id": "sephrals-loot-ledger",
+        "type": "module",
+        "manifest": "https://github.com/Sephral/sephrals-loot-ledger/releases/latest/download/module.json",
+        "reason": "Rolls the loot of an encounter into a shared loot table where your players claim items with need, want or pass."
+      }
+    ]
+  },
   "esmodules": [
     "scripts/sse.mjs"
   ],

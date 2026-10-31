@@ -1,6 +1,7 @@
-import {MODULE_ID, setting, t} from "./config.mjs";
+import {MODULE_ID, TESTED_VERSIONS, setting, t} from "./config.mjs";
 import {registerDebug} from "./debug.mjs";
 import {saveDebugFile} from "./debug-file.mjs";
+import {registerHubModule} from "./hub.mjs";
 import {editEncounter, saveSelected} from "./editor-app.mjs";
 import {openEncounters, refreshEncounters} from "./encounters-app.mjs";
 import {applyModuleLanguage} from "./language.mjs";
@@ -16,6 +17,7 @@ import {registerUsage} from "./usage.mjs";
 const TOOLS = {save: "sseSave", open: "sseEncounters"};
 
 Hooks.once("init", () => {
+  registerHubModule({moduleId: MODULE_ID, tested: TESTED_VERSIONS});
   registerSettings({
     language: value => changeLanguage(value, refreshEncounters),
     redraw: refreshEncounters,

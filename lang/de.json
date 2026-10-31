@@ -97,6 +97,8 @@
       "lootDrop": "Ziehe eine Würfeltabelle hierher für die Beute dieser Begegnung.",
       "lootOnly": "Lege hier eine Würfeltabelle ab.",
       "clearLoot": "Beutetabelle entfernen",
+      "ledgerHint": "Ohne Loot Ledger landet die Tabelle im Chat. Mit ihm melden deine Spieler ihren Anspruch an (Brauche, Hätte gern, Passe).",
+      "ledgerLink": "Mehr über Loot Ledger",
       "notes": "Notizen",
       "notesHint": "Taktik, Schätze, was passiert, wenn der Kampf kippt",
       "keepChanges": "Änderungen an diesen Tokens behalten",

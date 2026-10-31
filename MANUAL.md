@@ -30,7 +30,7 @@ Open it with *Saved encounters* in the token controls, the button *Saved Encount
 | Place again | Removes the monsters of the last placement and sets the encounter up fresh at the same spot with the same counts and facing. Handy when a fight should start over. |
 | Remove | Takes the monsters of the last placement off the map. |
 | Turn left, turn right | Turn the group 90° for the next placement and the pin, without placing it. |
-| Loot | Rolls the loot table of the encounter. With Sephral’s Loot Ledger active it opens the Loot Ledger's preview, so the loot goes straight into the party's loot table. Without it the table is drawn into the chat. |
+| Loot | Rolls the loot table of the encounter. With Sephral’s Loot Ledger active it opens the Loot Ledger's preview, so the loot goes straight into the party's loot table. Without it the table is drawn into the chat, and the loot section of the editor says so. |
 | Edit, open, delete | Edit opens the window from saving. Open shows the journal entry. Delete removes the encounter and its pins, monsters already on a map stay. |
 
 Two switches on top: *Place hidden* places every monster hidden from the players, *The heroes join the fight* is described above. Both are also in the module settings.
@@ -113,6 +113,10 @@ Two keys have no default, set them in Foundry's key settings under Saved Encount
 For bug reports, the GM saves one file about all of Sephral’s modules in this world: `Save debug file` in the module settings, or `Save Debug File (Sephral’s Modules)` in the context menu of a chat message. It holds the versions of Foundry, the system and the active modules, the settings of the modules and what they recorded, for Saved Encounters the number of encounters with their groups and counts, the last placements, the number of pins, the viewed scene and its grid, and the recent saves, placements, fights and pins. Notes and token data are left out. Macros call `game.modules.get("sephrals-saved-encounters").api.saveDebugFile()`.
 
 The file contains chat text and whispers. Check it before you share it.
+
+## Sephral’s Modules
+
+The first button in the module settings, *Sephral’s Modules* (GMs only), opens one window for all of Sephral's modules in the world: the version, self test, settings, manual and demo video of each, a button that switches on an installed module that is off (Foundry then reloads the world for everyone), and the debug file. Below, *More from Sephral* lists other modules that fit the game system of the world, shown only after a click, each with its demo video. The list is part of the module. Only a video you start is loaded, from the module page on GitHub.
 
 ## Storage
 

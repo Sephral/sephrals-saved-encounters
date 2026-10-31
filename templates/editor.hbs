@@ -58,6 +58,10 @@
     {{else}}
     <p class="sse-drop"><i class="fa-solid fa-coins" inert></i> {{text.lootDrop}}</p>
     {{/if}}
+    {{#unless ledgerActive}}
+    <p class="sse-hint sse-ledger-hint">{{text.ledgerHint}}
+      <a href="https://foundryvtt.com/packages/sephrals-loot-ledger" target="_blank" rel="noopener">{{text.ledgerLink}}</a></p>
+    {{/unless}}
   </section>
 
   <label class="sse-field sse-notes">

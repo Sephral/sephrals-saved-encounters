@@ -40,8 +40,6 @@ Foundry VTT 13 and 14 · any game system · English and German
 
 Every button, setting and the macro API are explained in the [manual](MANUAL.md). Questions or ideas? Join us on [Discord](https://discord.gg/7BjCgDYaBP). Looking for more? See [all modules by Sephral](https://github.com/Sephral).
 
-The token pictures in the demo are icons from [game-icons.net](https://game-icons.net) (CC BY 3.0) that come with Foundry VTT, tinted in color.
-
 ## License
 
 See [LICENSE.md](LICENSE.md).
