@@ -2,6 +2,7 @@
 
 **You spent twenty minutes setting up the goblin ambush on the bridge, and the players took the other road. Next session they finally walk into it, and you start dragging tokens again. Saved Encounters keeps that setup: save the monsters once and put the whole group back on any map with one click.**
 
+[![Install by link](https://img.shields.io/badge/Foundry%20VTT-Install%20by%20link-fe6a1f?logo=foundryvirtualtabletop&logoColor=white)](#install)
 [![Join Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/7BjCgDYaBP)
 [![More modules by Sephral](https://img.shields.io/badge/GitHub-More%20modules%20by%20Sephral-181717?logo=github&logoColor=white)](https://github.com/Sephral)
 
@@ -11,13 +12,13 @@
 
 * **Save what is on the map:** select the monsters, click once and they are kept with their formation, names, pictures, sizes and hidden state.
 * **Place with a preview:** the group follows your mouse over the map as a ghost and snaps to the grid. A click sets it down, also on maps with another grid size, on hexes and on gridless maps.
-* **Turn the group:** press Q or E while you place and the whole formation turns by 90 degrees. The encounter remembers which way it faces, also for its pin.
+* **Turn the group:** press Q or E while you place and the whole formation turns by 90 degrees. The encounter and its pin remember which way it faces.
 * **Counts that roll:** give the goblins `1d4+1` and every placement brings a different war band. Extra monsters find free squares next to their friends.
 * **Unique villains stay unique:** a named boss linked to his actor stands on a scene only once. Place the encounter again and he is left out with a short notice, while his goblins still come.
 * **Straight from the compendium:** drop monsters from the sidebar or a compendium into an encounter. They are imported once when you first place them.
 * **Place and fight:** one button sets the monsters down, adds them and the heroes on the scene to the combat and rolls initiative for the monsters.
 * **Pins on the map:** mark where an encounter waits. Alt and a double click on the pin and the monsters appear right there.
-* **Run it again:** remove the placed monsters or set the whole encounter up fresh at the same spot.
+* **Run it again:** remove the placed monsters or set it up fresh at the same spot.
 * **Loot included:** link a roll table to an encounter and roll it after the fight, into Sephral’s Loot Ledger when you use it.
 
 ## How it works
@@ -28,11 +29,23 @@
 
 ## Good to know
 
-Encounters are journal entries in a folder only the GM can see, so players never find them, and you can put them into a compendium to use them in other worlds.
+Encounters are journal entries in a folder only the GM sees, so players never find them. Put them into a compendium to use them in other worlds.
 
 ## Install
 
-Use the manifest URL `https://github.com/Sephral/sephrals-saved-encounters/releases/latest/download/module.json` in Foundry's module installer.
+Saved Encounters is not in Foundry's module search yet. Copy this link:
+
+```text
+https://github.com/Sephral/sephrals-saved-encounters/releases/latest/download/module.json
+```
+
+1. In Foundry's setup screen open **Add-on Modules** and click **Install Module**.
+2. Paste the link into **Manifest URL** at the bottom of the window.
+3. Click **Install**, then enable the module in your world.
+
+On The Forge open the Bazaar, click **Install From Manifest** and paste the link.
+
+![How to install a module by its link](https://raw.githubusercontent.com/Sephral/Sephral/main/media/install.gif)
 
 Foundry VTT 13 and 14 · any game system · English and German
 
