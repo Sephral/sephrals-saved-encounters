@@ -2,7 +2,7 @@
 
 **You spent twenty minutes setting up the goblin ambush on the bridge, and the players took the other road. Next session they finally walk into it, and you start dragging tokens again. Saved Encounters keeps that setup: save the monsters once and put the whole group back on any map with one click.**
 
-[![Install by link](https://img.shields.io/badge/Foundry%20VTT-Install%20by%20link-fe6a1f?logo=foundryvirtualtabletop&logoColor=white)](#install)
+[![Foundry VTT package](https://img.shields.io/badge/Foundry%20VTT-Package%20page-fe6a1f?logo=foundryvirtualtabletop&logoColor=white)](https://foundryvtt.com/packages/sephrals-saved-encounters)
 [![Join Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/7BjCgDYaBP)
 [![More modules by Sephral](https://img.shields.io/badge/GitHub-More%20modules%20by%20Sephral-181717?logo=github&logoColor=white)](https://github.com/Sephral)
 
@@ -33,19 +33,7 @@ Encounters are journal entries in a folder only the GM sees, so players never fi
 
 ## Install
 
-Saved Encounters is not in Foundry's module search yet. Copy this link:
-
-```text
-https://github.com/Sephral/sephrals-saved-encounters/releases/latest/download/module.json
-```
-
-1. In Foundry's setup screen open **Add-on Modules** and click **Install Module**.
-2. Paste the link into **Manifest URL** at the bottom of the window.
-3. Click **Install**, then enable the module in your world.
-
-On The Forge open the Bazaar, click **Install From Manifest** and paste the link.
-
-![How to install a module by its link](https://raw.githubusercontent.com/Sephral/Sephral/main/media/install.gif)
+Search for **Saved Encounters** in Foundry's module browser or open the [package page](https://foundryvtt.com/packages/sephrals-saved-encounters).
 
 Foundry VTT 13 and 14 · any game system · English and German
 
