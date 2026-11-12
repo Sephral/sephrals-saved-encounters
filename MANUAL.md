@@ -137,7 +137,7 @@ The first button in the module settings, *Sephral’s Modules* (GMs only), opens
 | `edit(entry)` | Opens the save window of an encounter |
 | `encounters()` | All encounters of the world (journal entries) |
 | `encounterOf(entry)` | The monsters, counts and notes of an encounter, or `null` |
-| `place(entry, options)` | Places an encounter (the journal entry or its UUID). Options: `combat`, `center: {x, y}` to place there without asking, `scene`, `counts`, `hidden`, `turns` (quarter turns to the right, negative to the left, the remembered facing when left out). Returns the created tokens. Unique characters already on the scene are left out |
+| `place(entry, options)` | Places an encounter (the journal entry or its UUID). Options: `combat`, `center: {x, y}` to place there without asking, `scene`, `counts`, `hidden`, `multiply` (places the group that many times over, linked actors stay single), `turns` (quarter turns to the right, negative to the left, the remembered facing when left out). Returns the created tokens. Unique characters already on the scene are left out |
 | `facing(entry)` | The remembered facing of an encounter: quarter turns to the right, 0 to 3 |
 | `turn(entry, delta)` | Turns the remembered facing by quarter turns (1 right, -1 left) and returns the new facing |
 | `turnPreview(delta)` | Turns the group that follows the mouse right now. `false` when none does |

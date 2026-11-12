@@ -3,7 +3,7 @@ import test from "node:test";
 
 import {DATA_VERSION, MAX_COUNT, actorKey, addActorToken, arrangePoints, buildEncounter, clampCount, cleanFormula, freeSpot,
   groupSummary, limitLinked, looksLikeFormula, nextGroupKey, normalTurns, normalizeEncounter, overlaps, pageHtml, planBounds,
-  planPlacement, planPoints, prunePlacements, relativeLayout, removeGroup, resolveCounts, savedCounts, stripTokenData, turnCells,
+  planPlacement, planPoints, prunePlacements, relativeLayout, removeGroup, resolveCounts, savedCounts, scaleCounts, stripTokenData, turnCells,
   turnPlan} from "../scripts/encounter-data.mjs";
 
 const GRID = {sizeX: 100, sizeY: 100, type: 1};
@@ -486,4 +486,14 @@ test("a turned formation lands on the square grid in its new shape, centered on 
   const pairPlaced = arrangePoints(pairPoints, {grid, rect, snap: squareSnap(100)});
   assert.deepEqual(pairPlaced.map(p => [p.x - pairPlaced[0].x, p.y - pairPlaced[0].y]), [[0, 0], [0, 100]]);
   for ( const p of pairPlaced ) assert.ok(p.x % 100 === 0 && p.y % 100 === 0, JSON.stringify(p));
+});
+
+test("scaleCounts multiplies the groups and keeps unique characters single", () => {
+  const encounter = {groups: [{key: "a", linked: false}, {key: "b", linked: true}, {key: "c", linked: false}]};
+  const counts = {a: 3, b: 1, c: 30};
+  assert.deepEqual(scaleCounts(encounter, counts, 2), {a: 6, b: 1, c: MAX_COUNT});
+  assert.equal(scaleCounts(encounter, counts, 1), counts);
+  assert.equal(scaleCounts(encounter, counts, 0), counts);
+  assert.equal(scaleCounts(encounter, counts, "x"), counts);
+  assert.deepEqual(counts, {a: 3, b: 1, c: 30});
 });

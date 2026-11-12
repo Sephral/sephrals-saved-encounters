@@ -2,7 +2,7 @@
   "id": "sephrals-saved-encounters",
   "title": "Sephral’s Saved Encounters",
   "description": "Save the monsters on the map as an encounter and place the whole group again with one click: counts like 1d4+1 goblins, compendium monsters, a pin on the map, place and start the fight, and a reset to run it once more.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": {
     "minimum": 13,
     "verified": "14.370"

@@ -6,7 +6,7 @@
 
 import {MODULE_ID, PIN_ICON, hasLevels, setting, t} from "./config.mjs";
 import {resolveActors} from "./actors.mjs";
-import {arrangePoints, limitLinked, normalTurns, planBounds, planPlacement, planPoints, resolveCounts,
+import {arrangePoints, limitLinked, normalTurns, planBounds, planPlacement, planPoints, resolveCounts, scaleCounts,
   turnPlan} from "./encounter-data.mjs";
 import {PlacementPreview} from "./preview.mjs";
 import {encounterOf, findEncounter, forgetPlacement, placedTokens, placementOf, rememberPlacement, rememberTurns,
@@ -164,6 +164,8 @@ export function linkedOnScene(scene) {
  * @param {Scene|null} [options.scene]        The scene, defaults to the viewed scene
  * @param {string|null} [options.levelId]     The level (Foundry 14), defaults to the viewed level
  * @param {Record<string, number>|null} [options.counts]   Fixed counts instead of rolling
+ * @param {number} [options.multiply]         Place the group this many times over: the counts of every group are
+ *   multiplied (linked actors stay single), for modules that place "three of these groups"
  * @param {boolean} [options.hidden]          Place hidden, defaults to the setting
  * @param {boolean} [options.snap=true]
  * @param {number} [options.turns]            Quarter turns clockwise from the saved formation (negative: to the
@@ -171,7 +173,7 @@ export function linkedOnScene(scene) {
  * @returns {Promise<TokenDocument[]>}
  */
 export async function placeEncounter(ref, {combat = false, center = null, scene = null, levelId, counts = null,
-  hidden, snap = true, turns} = {}) {
+  hidden, snap = true, turns, multiply = 1} = {}) {
   if ( !game.user.isGM ) return [];
   const entry = await findEncounter(ref);
   const encounter = encounterOf(entry);
@@ -193,6 +195,7 @@ export async function placeEncounter(ref, {combat = false, center = null, scene 
   if ( missing.length ) ui.notifications.warn(t("SSE.Notice.missingActors", {names: missing.join(", ")}));
   if ( !actors.size ) return [];
   counts ??= await resolveCounts(encounter, rollFormula);
+  counts = scaleCounts(encounter, counts, multiply);
   const planned = planPlacement(encounter, counts).filter(p => actors.has(encounter.tokens[p.index].group));
   // Unique characters (linked actors) come once per scene: not again when they already stand there
   const {plan, skipped} = limitLinked(encounter, planned, {actorOf: key => actors.get(key)?.id,

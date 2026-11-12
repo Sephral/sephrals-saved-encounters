@@ -403,6 +403,25 @@ export async function resolveCounts(encounter, roll) {
 }
 
 /**
+ * Multiply the counts of the groups, for a result that says "three of these groups". Linked actors (unique characters)
+ * keep their count.
+ * @param {object} encounter
+ * @param {Record<string, number>} counts
+ * @param {number} factor   A whole number from 1 up, anything else changes nothing
+ * @returns {Record<string, number>}
+ */
+export function scaleCounts(encounter, counts, factor) {
+  const times = Math.floor(num(factor));
+  if ( !(times > 1) ) return counts;
+  const scaled = {...counts};
+  for ( const g of encounter.groups ) {
+    if ( g.linked || !(g.key in scaled) ) continue;
+    scaled[g.key] = clampCount(scaled[g.key] * times);
+  }
+  return scaled;
+}
+
+/**
  * A rolled count as a whole number of tokens.
  * @param {*} value
  * @returns {number}
