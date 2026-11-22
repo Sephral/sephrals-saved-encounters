@@ -11,6 +11,7 @@ import {pinFor, placeAgain, placeAtPin, placeEncounter, placePin, rememberPin, r
 import {noticeNewVersions, runSelfTest} from "./selftest.mjs";
 import {changeLanguage, registerSettings} from "./settings.mjs";
 import {encounterOf, isEncounter, placementOf, turnsOf, worldEncounters} from "./store.mjs";
+import {sampleWindows} from "./sample-windows.mjs";
 import {registerUsage} from "./usage.mjs";
 
 /** The tools in the token controls. */
@@ -78,6 +79,8 @@ Hooks.once("init", () => {
     cancel: cancelPreview,
     /** Check the module (GM). */
     runSelfTest,
+    /** Windows and hints filled with made-up encounters, nothing saved (translators, testing; see samples.mjs). */
+    samples: () => sampleWindows(),
     /** Save the debug file of Sephral's modules (GM). */
     saveDebugFile: messageId => saveDebugFile(messageId ?? null, {moduleId: MODULE_ID})
   };

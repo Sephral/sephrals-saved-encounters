@@ -77,6 +77,33 @@ export function cancelPreview() {
   running?.finish(null);
 }
 
+/**
+ * The inside of the hint: what a click does, how to turn the group and how to cancel.
+ * @param {string} label
+ * @param {boolean} pin
+ * @returns {string}
+ */
+export function hintHtml(label, pin) {
+  const turning = pin ? "" : `<small class="sse-preview-turn">${esc(turnHint())}
+      <b class="sse-preview-facing" hidden></b></small>`;
+  return `<i class="fa-solid ${pin ? "fa-location-dot" : "fa-dragon"}" inert></i>
+      <span><strong>${esc(label)}</strong>${turning}<small>${esc(t("SSE.Preview.keys"))}</small></span>`;
+}
+
+/**
+ * Show in a hint how far the group is turned.
+ * @param {HTMLElement} hint
+ * @param {number} turns
+ */
+export function showFacing(hint, turns) {
+  const facing = hint?.querySelector(".sse-preview-facing");
+  if ( !facing ) return;
+  const text = facingLabel(turns);
+  facing.textContent = text;
+  facing.hidden = !text;
+  hint.dataset.turns = String(normalTurns(turns));
+}
+
 export class PlacementPreview {
   /**
    * @param {object} options
@@ -114,12 +141,7 @@ export class PlacementPreview {
 
   /** Show in the hint how far the group is turned. */
   #showFacing() {
-    const facing = this.hint?.querySelector(".sse-preview-facing");
-    if ( !facing ) return;
-    const text = facingLabel(this.turns);
-    facing.textContent = text;
-    facing.hidden = !text;
-    this.hint.dataset.turns = String(this.turns);
+    showFacing(this.hint, this.turns);
   }
 
   /**
@@ -145,10 +167,7 @@ export class PlacementPreview {
     this.layer.className = "sse-preview-layer";
     this.hint = document.createElement("div");
     this.hint.className = "sse-preview-hint";
-    const turning = this.pin ? "" : `<small class="sse-preview-turn">${esc(turnHint())}
-      <b class="sse-preview-facing" hidden></b></small>`;
-    this.hint.innerHTML = `<i class="fa-solid ${this.pin ? "fa-location-dot" : "fa-dragon"}" inert></i>
-      <span><strong>${esc(this.label)}</strong>${turning}<small>${esc(t("SSE.Preview.keys"))}</small></span>`;
+    this.hint.innerHTML = hintHtml(this.label, this.pin);
     document.body.append(this.layer, this.hint);
     this.#showFacing();
     // Foundry hands no keys to its keybindings while a text field has the focus, the search field for example

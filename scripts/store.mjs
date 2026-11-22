@@ -150,6 +150,15 @@ export async function createEncounterFolder(name, parentId = null) {
  */
 async function labels(encounter) {
   const table = encounter.lootTable ? await fromUuid(encounter.lootTable).catch(() => null) : null;
+  return pageLabels(table?.name ?? null);
+}
+
+/**
+ * The page labels in the current language.
+ * @param {string|null} lootName   The name of the loot table, if any
+ * @returns {object}
+ */
+export function pageLabels(lootName = null) {
   return {
     monsters: t("SSE.Page.monsters"),
     count: t("SSE.Page.count"),
@@ -157,7 +166,7 @@ async function labels(encounter) {
     unique: t("SSE.Page.unique"),
     rolled: formula => t("SSE.Page.rolled", {formula}),
     loot: t("SSE.Page.loot"),
-    lootName: table?.name ?? null
+    lootName
   };
 }
 

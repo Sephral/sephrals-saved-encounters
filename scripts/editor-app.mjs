@@ -15,7 +15,7 @@ import {countFeature} from "./usage.mjs";
 const {ApplicationV2, HandlebarsApplicationMixin} = foundry.applications.api;
 
 /** Value of the folder select that makes a new folder. */
-const NEW_FOLDER = "__new__";
+export const NEW_FOLDER = "__new__";
 
 export class EncounterEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   /**
@@ -25,7 +25,7 @@ export class EncounterEditor extends HandlebarsApplicationMixin(ApplicationV2) {
    * @param {boolean} [options.hasChanges]     The tokens of the draft carry changes (hit points and the like)
    */
   constructor({entry = null, draft = null, hasChanges = false, ...options} = {}) {
-    super({...options, id: entry ? `sse-editor-${entry.id}` : "sse-editor-new"});
+    super({id: entry ? `sse-editor-${entry.id}` : "sse-editor-new", ...options});
     this.entry = entry;
     this.encounter = entry ? encounterOf(entry) : normalizeEncounter(draft);
     this.hasChanges = hasChanges;
@@ -61,10 +61,10 @@ export class EncounterEditor extends HandlebarsApplicationMixin(ApplicationV2) {
 
   /** @override */
   async _prepareContext() {
-    const folders = encounterFolders();
+    const folders = this._folders();
     const root = folders[0] ?? null;
     const folderId = this.inputs.folderId ?? root?.id ?? NEW_FOLDER;
-    const table = this.encounter.lootTable ? await fromUuid(this.encounter.lootTable).catch(() => null) : null;
+    const table = await this._lootTable();
     const groups = groupSummary(this.encounter).map(g => ({
       ...g,
       img: imageOr(g.img),
@@ -83,7 +83,7 @@ export class EncounterEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       groups,
       empty: !groups.length,
       loot: table ? {name: table.name, img: imageOr(table.img)} : null,
-      ledgerActive: Boolean(game.modules.get("sephrals-loot-ledger")?.active),
+      ledgerActive: this._ledgerActive(),
       notes: this.encounter.notes,
       hasChanges: this.hasChanges,
       keepChanges: this.inputs.keepChanges,
@@ -113,6 +113,21 @@ export class EncounterEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         cancel: t("SSE.Editor.cancel")
       }
     };
+  }
+
+  /** The folders to choose from. The sample window overrides this. */
+  _folders() {
+    return encounterFolders();
+  }
+
+  /** The roll table of the loot, or null. The sample window overrides this. */
+  async _lootTable() {
+    return this.encounter.lootTable ? fromUuid(this.encounter.lootTable).catch(() => null) : null;
+  }
+
+  /** Is Loot Ledger active? The sample window overrides this to show both states. */
+  _ledgerActive() {
+    return Boolean(game.modules.get("sephrals-loot-ledger")?.active);
   }
 
   /** @override */
@@ -168,8 +183,10 @@ export class EncounterEditor extends HandlebarsApplicationMixin(ApplicationV2) {
     const doc = await fromUuid(data.uuid).catch(() => null);
     if ( (doc instanceof Actor) ) {
       this.encounter = addActorToken(this.encounter, actorRef(doc), prototypeData(doc));
-      countFeature(MODULE_ID, "actorAdded");
-      trace.add("actorAdded", {actor: doc.uuid});
+      if ( !this.isSample ) {
+        countFeature(MODULE_ID, "actorAdded");
+        trace.add("actorAdded", {actor: doc.uuid});
+      }
       return this.render();
     }
     if ( doc instanceof RollTable ) {

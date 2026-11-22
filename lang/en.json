@@ -177,6 +177,26 @@
       "Hint": "Saves one file for bug reports about all of Sephral’s modules in this world: versions, settings and what the modules recorded, such as the latest chat messages they read. It contains chat text and whispers, check it before you share it.",
       "Entry": "Save Debug File (Sephral’s Modules)",
       "Saved": "Debug file {file} saved. It contains chat text and whispers, check it before you share it."
+    },
+    "Sample": {
+      "nothing": "This is a sample window: this does nothing here.",
+      "groupPlacing": "Placing on the map",
+      "groupJournal": "Journal",
+      "groupQuestions": "Questions",
+      "list": "With encounters",
+      "listEmpty": "No encounters yet",
+      "editorNew": "Saving the selected tokens",
+      "editorFolder": "With a new folder",
+      "editorEdit": "Editing an encounter",
+      "editorEmpty": "No monsters yet",
+      "page": "Journal page of an encounter",
+      "previewPlace": "Hint while placing",
+      "previewFight": "Hint while placing and fighting",
+      "previewPin": "Hint while pinning",
+      "previewTurns": "Hint after turning the group",
+      "notes": "The bandits wait at the old mill. The wolves follow them.",
+      "notes2": "When the first bandit falls, the rest run for the bridge.",
+      "lootTable": "Bandit loot"
     }
   }
 }

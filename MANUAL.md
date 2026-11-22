@@ -148,6 +148,7 @@ The first button in the module settings, *Sephral’s Modules* (GMs only), opens
 | `lastPlacement(uuid)` | The scene, spot, tokens and counts of the last placement, or `null` |
 | `rollLoot(entry)` | Rolls the loot table of an encounter |
 | `cancel()` | Stops a running placement |
+| `samples()` | The list of sample windows (the encounters window, the editor, the journal page, the placement hints, the delete question) filled with made-up encounters; each entry has `id`, `label` and `open()`. Nothing is saved, no token, pin or fight is made and the map stays as it is. The translator of Sephral’s modules uses it |
 | `runSelfTest()` | Runs the self test (GM) |
 | `saveDebugFile()` | Saves the debug file (GM) |
 

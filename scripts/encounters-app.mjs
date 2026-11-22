@@ -67,8 +67,7 @@ export class EncountersApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   /** @override */
   async _prepareContext() {
-    const root = await encounterRoot({create: false});
-    const entries = worldEncounters();
+    const {root, entries} = await this._source();
     const folders = new Map();
     for ( const entry of entries ) {
       const folder = entry.folder ?? null;
@@ -77,7 +76,7 @@ export class EncountersApp extends HandlebarsApplicationMixin(ApplicationV2) {
         folders.set(key, {id: key, name: folder?.name ?? t("SSE.Window.noFolder"),
           depth: depthBelow(folder, root), sort: folderPath(folder), closed: this.#closed.has(key), encounters: []});
       }
-      folders.get(key).encounters.push(this.#row(entry));
+      folders.get(key).encounters.push(this._row(entry));
     }
     const list = [...folders.values()].sort((a, b) => a.sort.localeCompare(b.sort));
     for ( const folder of list ) {
@@ -115,21 +114,36 @@ export class EncountersApp extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   /**
+   * The "Encounters" folder and the encounters to list. The sample window overrides this with made-up ones.
+   * @returns {Promise<{root: Folder|null, entries: object[]}>}
+   */
+  async _source() {
+    return {root: await encounterRoot({create: false}), entries: worldEncounters()};
+  }
+
+  /**
+   * What the row of an encounter shows besides its data: where it stands, its pins, its facing.
+   * @param {object} entry
+   * @returns {{encounter: object, scene: Scene|null, tokens: object[], pinsHere: number, pinScenes: object[], turns: number}}
+   */
+  _facts(entry) {
+    const {scene, tokens} = placedTokens(entry.uuid);
+    return {encounter: encounterOf(entry), scene, tokens, pinsHere: pinsOf(entry).length, pinScenes: pinnedScenes(entry),
+      turns: turnsOf(entry)};
+  }
+
+  /**
    * The row of one encounter.
    * @param {JournalEntry} entry
    * @returns {object}
    */
-  #row(entry) {
-    const encounter = encounterOf(entry);
+  _row(entry) {
+    const {encounter, scene, tokens, pinsHere, pinScenes, turns} = this._facts(entry);
     const groups = groupSummary(encounter);
-    const {scene, tokens} = placedTokens(entry.uuid);
-    const pinsHere = pinsOf(entry).length;
-    const pinScenes = pinnedScenes(entry);
     const meta = [];
     if ( tokens.length ) meta.push({icon: "fa-solid fa-chess-pawn", text: t("SSE.Window.placedOn", {count: tokens.length, scene: scene.name})});
     if ( pinScenes.length ) meta.push({icon: "fa-solid fa-location-dot", text: t("SSE.Window.pinnedOn", {scenes: pinScenes.map(s => s.name).join(", ")})});
     if ( encounter.lootTable ) meta.push({icon: "fa-solid fa-coins", text: t("SSE.Window.hasLoot")});
-    const turns = turnsOf(entry);
     if ( turns ) meta.push({icon: "fa-solid fa-compass", text: facingLabel(turns), facing: true});
     const summary = summaryLine(encounter);
     return {
